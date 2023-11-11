@@ -25,3 +25,8 @@ nvim --noplugin +PlugUpdate +qa
 rm -rf "$HOME/.config/tmux"
 mkdir -p "$HOME/.config/tmux"
 ln -sf "$HOME/Dotfiles/tmux/tmux.conf" "$HOME/.config/tmux/tmux.conf"
+
+# clone tpm if not on system
+[ ! -d "$HOME/.config/tmux/plugins/tpm" ] \
+  && git clone https://github.com/tmux-plugins/tpm \
+  "$HOME/.config/tmux/plugins/tpm"
